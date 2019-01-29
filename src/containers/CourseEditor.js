@@ -12,7 +12,8 @@ class CourseEditor extends React.Component {
     const course = this.courseService.findCourseById(courseId)
     this.state = {
       course: course,
-      module: course.modules[0]
+      module: course.modules,
+      selectedModule: course.modules[0]
     }
   }
 
@@ -20,10 +21,15 @@ class CourseEditor extends React.Component {
   
   selectModule = module =>
     this.setState({
-      module: module
+      selectedModule: module
     })
 
 
+  selectLesson = lesson =>
+   this.setState({
+       selectedLesson: lesson,
+       //selectedTopic: lesson.topics[0]
+   })
 
 
 
@@ -31,18 +37,21 @@ class CourseEditor extends React.Component {
  	return(
       <div>
         <h2>Course Editor: {this.state.course.title}</h2>
-      <div className="row">
-        <div className="col-4">
-          <ModuleList
-            selectModule={this.selectModule}
-            modules={this.state.course.modules}/>
+        <div className="row">
+          <div className="col-4">
+            <ModuleList
+              selectedModule={this.state.selectedModule}
+              selectModule={this.selectModule}
+              modules={this.state.module}/>
+          </div>
+          <div className="col-8">
+            <LessonTabs
+              selectLesson={this.selectLesson}
+              selectedLesson={this.state.selectedLesson}
+              lessons={this.state.selectedModule.lessons}/>
+            <TopicPills/>
+          </div>
         </div>
-        <div className="col-8">
-          <LessonTabs
-            lessons={this.state.module.lessons}/>
-          <TopicPills/>
-        </div>
-      </div>
       </div>
 
 );

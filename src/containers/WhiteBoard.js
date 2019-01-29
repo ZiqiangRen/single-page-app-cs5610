@@ -5,32 +5,45 @@ import CourseTable from './CourseTable'
 import CourseService from '../services/CourseService'
 import CourseEditor from "./CourseEditor";
 class WhiteBoard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.courseService = new CourseService()
+    const c = this.courseService.findAllCourses()
     this.state = {
-      courses: this.courseService.findAllCourses()
+      courses: c,
+      selectedCourse: c[0]
     }
   }
-  deleteCourse = course =>
+
+
+  deleteCourse = (course) =>
     this.setState({
       courses: this.courseService.deleteCourse(course)
     })
+
+
   addCourse = () =>
     this.setState({
       courses: this.courseService.addCourse(null)
     })
+
+
+  selectCourse = (course) =>
+     this.setState({selectedCourse: course})
+
+
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <h1>White Board</h1>
         <Router>
           <div>
-            <Link to="/">Course Grid</Link> |
-            <Link to="/table">Course Table</Link>
-            <Route path='/' exact
+            
+            <Route path='/' 
+                   exact
                    render={() =>
                      <CourseGrid
+                       selectCourse={this.selectCourse}
                        addCourse={this.addCourse}
                        deleteCourse={this.deleteCourse}
                        courses={this.state.courses}/>}/>
@@ -38,7 +51,12 @@ class WhiteBoard extends Component {
                    exact
                    component={CourseEditor}/>
             <Route path='/table'
-                   render={() => <CourseTable courses={this.state.courses}/>}/>
+                   render={() => 
+                    <CourseTable 
+                       selectCourse={this.selectCourse}
+                       addCourse={this.addCourse}
+                       deleteCourse={this.deleteCourse}
+                       courses={this.state.courses}/>}/>
           </div>
         </Router>
       </div>

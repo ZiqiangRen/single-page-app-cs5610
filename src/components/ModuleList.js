@@ -14,6 +14,7 @@ class ModuleList extends React.Component {
     // this.titleChanged = this.titleChanged.bind(this);
   }
 
+
   createModule = () => {
     this.setState(
       {
@@ -24,12 +25,29 @@ class ModuleList extends React.Component {
       }
     )
   }
+
+
   titleChanged = (event) => {
     this.setState(
       {
-        module: {title: event.target.value}
+        module: {
+        id: 1,
+        title: event.target.value,
+        lessons: [
+          {
+            id: 1,
+            title: "New Lesson 1"
+          },
+          {
+            id: 2,
+            title: "New Lesson 2"
+          }
+        ]
+      }
       });
   }
+
+
   render() {
     return(
       <div>
@@ -49,6 +67,7 @@ class ModuleList extends React.Component {
                 return (
                   <ModuleListItem
                     selectModule={this.props.selectModule}
+                    selectedModule={this.props.selectedModule}
                     key={module.id}
                     module={module}/>
                 )
