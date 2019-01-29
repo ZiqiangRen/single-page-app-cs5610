@@ -1,7 +1,7 @@
 import React from 'react';
-import ModuleList from './ModuleList'
-import LessonTabs from './LessonTabs'
-import TopicPills from './TopicPills'
+import ModuleList from '../components/ModuleList'
+import LessonTabs from '../components/LessonTabs'
+import TopicPills from '../components/TopicPills'
 import CourseService from "../services/CourseService"
 
 class CourseEditor extends React.Component {

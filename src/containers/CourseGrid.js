@@ -1,6 +1,6 @@
 import React from 'react'
-import CourseCard from './CourseCard'
-import NewCourseCard from "./NewCourseCard"
+import CourseCard from '../components/CourseCard'
+import NewCourseCard from "../components/NewCourseCard"
 
 const CourseGrid = ({courses, deleteCourse, addCourse}) =>
   <div className="card-deck">

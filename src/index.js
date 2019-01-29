@@ -6,14 +6,13 @@ import ReactDOM from 'react-dom';
 import HelloWorld from './components/hello'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import WhiteBoard from './components/WhiteBoard'
+import WhiteBoard from './containers/WhiteBoard'
 import Stateless from './components/Stateless'
 
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
 	<div className="container-fluid">
-		<Stateless message="test my stateless"/>
 		<WhiteBoard/>
 	</div>,
 	document.getElementById("root")
