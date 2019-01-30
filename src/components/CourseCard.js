@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
 const CourseCard = ({course, deleteCourse, selectCourse}) =>
-  <div className="card"
-       styles={{width: '18rem'}}>
+  <div className="card">
 	    <img className="card-img-top"
 	         src="https://picsum.photos/300/200"/>
 	    <div className="card-body">

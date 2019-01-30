@@ -3,6 +3,7 @@ import ModuleList from '../components/ModuleList'
 import LessonTabs from '../components/LessonTabs'
 import TopicPills from '../components/TopicPills'
 import CourseService from "../services/CourseService"
+import WidgetList from "../components/WidgetList"
 
 class CourseEditor extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class CourseEditor extends React.Component {
               selectedLesson={this.state.selectedLesson}
               lessons={this.state.selectedModule.lessons}/>
             <TopicPills/>
+            <WidgetList/>
           </div>
         </div>
       </div>

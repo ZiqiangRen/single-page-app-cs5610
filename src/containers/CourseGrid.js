@@ -7,18 +7,23 @@ import CourseService from "../services/CourseService"
 const CourseGrid = ({courses, deleteCourse, addCourse, selectCourse}) =>
   <div>
   <Link className="btn btn-success" to="/table">To Table View</Link>
-  <div className="card-deck">
+  <div className="card-deck container-fluid">
     {
         courses.map(course =>
-          <CourseCard
-            selectCourse={selectCourse}
-            deleteCourse={deleteCourse}
-            course={course}
-            key={course.id}/>
+          <div className="col-sm-12 col-md-4 col-lg-2 row-eq-height">
+            <CourseCard
+              selectCourse={selectCourse}
+              deleteCourse={deleteCourse}
+              course={course}
+              key={course.id}/>
+          </div>
         )
     }
-    <NewCourseCard
-      addCourse={addCourse}/>
+    <div className="col-sm-12 col-md-4 col-lg-2 row-eq-height">
+      <NewCourseCard
+        addCourse={addCourse}/>
+    </div>
   </div>
  </div>
+
 export default CourseGrid;

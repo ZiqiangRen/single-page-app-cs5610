@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ModuleListItem from "./ModuleListItem";
 
@@ -7,7 +6,20 @@ class ModuleList extends React.Component {
     super(props)
 
     this.state = {
-      module: { title: '' },
+      module: {
+        id: 1,
+        title: "New Module",
+        lessons: [
+          {
+            id: 1,
+            title: "New Lesson 1"
+          },
+          {
+            id: 2,
+            title: "New Lesson 2"
+          }
+        ]
+      },
       modules: this.props.modules
     };
 
@@ -16,12 +28,36 @@ class ModuleList extends React.Component {
 
 
   createModule = () => {
+    let newModule = {
+        id: (new Date()).getTime(),
+        title: this.state.module.title,
+        lessons: [
+          {
+            id: 1,
+            title: "New Lesson 1"
+          },
+          {
+            id: 2,
+            title: "New Lesson 2"
+          }
+        ]
+      }
     this.setState(
       {
         modules: [
           ...this.state.modules,
-          this.state.module
+          newModule
         ]
+      }
+    )
+  }
+
+  deleteModule = (delmodule) => {
+    this.setState(
+      {
+        modules: this.state.modules.filter(
+      module => module !== delmodule
+      )
       }
     )
   }
@@ -32,7 +68,7 @@ class ModuleList extends React.Component {
       {
         module: {
         id: 1,
-        title: event.target.value,
+        title: event.target.value? event.target.value:"New Module",
         lessons: [
           {
             id: 1,
@@ -56,7 +92,8 @@ class ModuleList extends React.Component {
           <li className="list-group-item">
             <input
               onChange={this.titleChanged}
-              className="form-control"/>
+              className="form-control"
+              placeholder="New Module"/>
             <button
               onClick={this.createModule}
               className="btn btn-primary btn-block">Add Module</button>
@@ -68,6 +105,7 @@ class ModuleList extends React.Component {
                   <ModuleListItem
                     selectModule={this.props.selectModule}
                     selectedModule={this.props.selectedModule}
+                    deleteModule={this.deleteModule}
                     key={module.id}
                     module={module}/>
                 )
