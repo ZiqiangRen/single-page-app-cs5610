@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Link, Route} from '../../node_modules/react-router-dom'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import CourseGrid from './CourseGrid'
 import CourseTable from './CourseTable'
 import CourseService from '../services/CourseService'

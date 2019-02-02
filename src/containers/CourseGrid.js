@@ -1,6 +1,6 @@
 import React from 'react'
 import CourseCard from '../components/CourseCard'
-import {Link} from '../../node_modules/react-router-dom'
+import {Link} from 'react-router-dom'
 import NewCourseCard from "../components/NewCourseCard"
 import CourseService from "../services/CourseService"
 
