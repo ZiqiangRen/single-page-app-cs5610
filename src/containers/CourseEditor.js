@@ -50,7 +50,9 @@ class CourseEditor extends React.Component {
               selectLesson={this.selectLesson}
               selectedLesson={this.state.selectedLesson}
               lessons={this.state.selectedModule.lessons}/>
+            <br/>
             <TopicPills/>
+            <br/>
             <WidgetList/>
           </div>
         </div>
