@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import TopicPills from './TopicPills';
+//import TopicPills from './TopicPills';
 
 import LessonItem from "./LessonItem";
 import ReactDOM from "react-dom";
 
-class LessonTabs extends React.Component {
+class LessonTabs extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,12 +12,115 @@ class LessonTabs extends React.Component {
         module:
           {
             id: 1,
-            title: "New Lesson"
+            title: "New Lesson",
+            "topics": [
+              {
+                "title": "DOM",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
           },
       modules: this.props.lessons
     };
+  }
 
-    // this.titleChanged = this.titleChanged.bind(this);
+  componentWillReceiveProps(nextProps) {
+      this.setState({modules: nextProps.lessons});
   }
 
 
@@ -26,19 +129,118 @@ class LessonTabs extends React.Component {
           let newModule = {
         id: (new Date()).getTime(),
         title: this.state.module.title,
+        "topics": [
+              {
+                "title": "DOM",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
       }
-    this.setState(
-      {
+    this.setState({
         modules: [
           ...this.state.modules,
           newModule
-        ]
-      }
-    )
+        ]})
+
+    this.props.addLesson(newModule);
+
     }
     else{
-      console.log(this.state.modules);
-      console.log(this.state.module);
       var i = 0
       for(i=0;i<this.state.modules.length;i++){
         if(this.state.modules[i].id===this.state.module.id){
@@ -85,7 +287,6 @@ class LessonTabs extends React.Component {
   titleChanged = (event, update="",updateID=0) => {
     if(update===""){
           this.state.module.title = event.target.value? event.target.value:"New Lesson"
-
       }
 
     else{
@@ -130,7 +331,7 @@ class LessonTabs extends React.Component {
               placeholder="New Lesson"/>
             <button
               onClick={this.createModule}
-              className="btn btn-primary"><i class="fa fa-plus"></i></button>
+              className="btn btn-primary"><i className="fa fa-plus"></i></button>
             </div>
           </li>
         </ul>

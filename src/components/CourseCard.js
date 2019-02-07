@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 
 const CourseCard = ({course, deleteCourse, selectCourse}) =>
@@ -10,7 +10,7 @@ const CourseCard = ({course, deleteCourse, selectCourse}) =>
 	      <p className="card-text">Card text.</p>
 	      <Link className="btn btn-primary" onClick={() => selectCourse(course)} to={`/course/${course.id}`}>Edit</Link>
 	      <a onClick={() => deleteCourse(course)}
-	         className="btn btn-danger">Delete</a>
+	         className="btn btn-danger">Del</a>
 	    </div>
     </div>
 

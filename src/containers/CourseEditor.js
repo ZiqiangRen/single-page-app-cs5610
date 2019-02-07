@@ -3,36 +3,94 @@ import ModuleList from '../components/ModuleList'
 import LessonTabs from '../components/LessonTabs'
 import TopicPills from '../components/TopicPills'
 import CourseService from "../services/CourseService"
-import WidgetList from "../components/WidgetList"
+
+
+import WidgetListContainer from '../containers/WidgetListContainer'
+import widgetReducer from '../reducers/WidgetReducer'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+
+
+
+
 
 class CourseEditor extends React.Component {
   constructor(props) {
     super(props)
     this.courseService = new CourseService()
+
+
+
+    this.store = createStore(widgetReducer);
     const courseId = parseInt(props.match.params.id)
     const course = this.courseService.findCourseById(courseId)
     this.state = {
       course: course,
-      module: course.modules,
-      selectedModule: course.modules[0]
+      lesson: course.modules[0].lessons,
+      topic: course.modules[0].lessons[0].topics,
+      selectedModule: course.modules[0],
+      selectedLesson: course.modules[0].lessons[0],
+      selectedTopic: course.modules[0].lessons[0].topics[0],
     }
   }
 
 
   
-  selectModule = module =>
+  selectModule = module => {
     this.setState({
-      selectedModule: module
-    })
+      selectedModule: module,
+      selectedLesson: module.lessons[0],
+      selectedTopic: module.lessons[0].topics[0],
+      lesson: module.lessons,
+      topic: module.lessons[0].topics
+    });
+    let action = {
+      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
+      topicId: this.state.selectedTopic.id
+    }
+    //console.log(action.topicId);
+    this.store.dispatch(action);
+  }
 
 
-  selectLesson = lesson =>
+
+  selectLesson = lesson => {
    this.setState({
        selectedLesson: lesson,
-       //selectedTopic: lesson.topics[0]
+       selectedTopic: lesson.topics[0],
+       topic: lesson.topics
+   })
+   let action = {
+      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
+      topicId: this.state.selectedTopic.id
+    }
+    this.store.dispatch(action);
+}
+
+  selectTopic = topic => {
+   this.setState({
+       selectedTopic: topic
+   })
+   let action = {
+      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
+      topicId: this.state.selectedTopic.id
+    }
+    this.store.dispatch(action);
+}
+
+   addLesson = lesson => 
+      this.setState({
+       lesson: [ ...this.state.lesson,
+                 lesson
+       ]
    })
 
-
+   addTopic = topic => 
+      this.setState({
+       topic: [ ...this.state.topic,
+                 topic
+       ]
+   })
 
  render() { 
  	return(
@@ -41,25 +99,32 @@ class CourseEditor extends React.Component {
         <div className="row">
           <div className="col-4">
             <ModuleList
-              selectedModule={this.state.selectedModule}
               selectModule={this.selectModule}
-              modules={this.state.module}/>
+              selectedModule={this.state.selectedModule}
+              modules={this.state.course.modules}/>
           </div>
           <div className="col-8">
             <LessonTabs
               selectLesson={this.selectLesson}
               selectedLesson={this.state.selectedLesson}
-              lessons={this.state.selectedModule.lessons}/>
+              addLesson={this.addLesson}
+              lessons={this.state.lesson}/>
             <br/>
-            <TopicPills/>
+            <TopicPills
+              selectTopic={this.selectTopic}
+              selectedTopic={this.state.selectedTopic}
+              addTopic={this.addTopic}
+              topics={this.state.topic}/>
             <br/>
-            <WidgetList/>
+            <Provider store={this.store}>
+              <WidgetListContainer/>
+            </Provider>
           </div>
         </div>
       </div>
-
-);
-}}
+    );
+  }
+}
 
 
 

@@ -10,14 +10,216 @@ class ModuleList extends React.Component {
       module: {
         id: 1,
         title: "New Module",
-        lessons: [
+        "lessons": [
           {
-            id: 1,
-            title: "New Lesson 1"
+            "id": 133,
+            "title": "Lesson 3",
+            "topics": [
+              {
+                "title": "DOM",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
           },
           {
-            id: 2,
-            title: "New Lesson 2"
+            "id": 233,
+            "title": "Lesson 4",
+            "topics": [
+              {
+                "title": "DOM2",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags2",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes2",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -33,14 +235,216 @@ class ModuleList extends React.Component {
           let newModule = {
         id: (new Date()).getTime(),
         title: this.state.module.title,
-        lessons: [
+        "lessons": [
           {
-            id: 1,
-            title: "New Lesson 1"
+            "id": 133,
+            "title": "Lesson 3",
+            "topics": [
+              {
+                "title": "DOM",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
           },
           {
-            id: 2,
-            title: "New Lesson 2"
+            "id": 233,
+            "title": "Lesson 4",
+            "topics": [
+              {
+                "title": "DOM2",
+                "id": 321,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Tags2",
+                "id": 654,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              },
+              {
+                "title": "Attributes2",
+                "id": 987,
+                "widgets": [
+                  {
+                    "id": 3214,
+                    "type": "HEADING",
+                    "size": 1,
+                    "text": "The Document Object Model"
+                  },
+                  {
+                    "id": 5432,
+                    "type": "PARAGRAPH",
+                    "text": "This topic introduces the DOM"
+                  },
+                  {
+                    "id":9867,
+                    "type": "LIST",
+                    "items": "Nodes,Attributes,Tag names,IDs,Styles,Classes"
+                  },
+                  {
+                    "id":7654,
+                    "type": "IMAGE",
+                    "src": "https://picsum.photos/200"
+                  },
+                  {
+                    "id": 8763,
+                    "type": "LINK",
+                    "title": "The DOM",
+                    "href": "https://en.wikipedia.org/wiki/Document_Object_Model"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -54,8 +458,6 @@ class ModuleList extends React.Component {
     )
     }
     else{
-      console.log(this.state.modules);
-      console.log(this.state.module);
       var i = 0
       for(i=0;i<this.state.modules.length;i++){
         if(this.state.modules[i].id===this.state.module.id){
@@ -123,10 +525,8 @@ class ModuleList extends React.Component {
           ]
         }
         });
-
   }
-
-  }
+}
 
 
   render() {
@@ -142,7 +542,7 @@ class ModuleList extends React.Component {
                 placeholder="New Module"/>
               <button
                 onClick={this.createModule}
-                className="btn btn-primary"><i class="fa fa-plus"></i></button>
+                className="btn btn-primary"><i className="fa fa-plus"></i></button>
             </div>
           </li>
           {

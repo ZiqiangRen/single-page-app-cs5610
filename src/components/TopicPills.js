@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import PillItem from "./PillItem";
 import ReactDOM from "react-dom";
 
-class TopicPills extends React.Component {
+class TopicPills extends Component {
   constructor(props) {
     super(props)
     const topics = [
@@ -22,25 +22,20 @@ class TopicPills extends React.Component {
       ]
     this.state = {
       update: 0,
-        module:
-          {
-            id: 1,
-            title: "New Topic"
-          },
-        modules : topics,
-      selectedPill: topics[0]
+      module:
+        {
+          id: 1,
+          title: "New Topic"
+        },
+        modules : this.props.topics,
     };
-
-
-
-    // this.titleChanged = this.titleChanged.bind(this);
   }
 
-   selectPill = lesson =>
-   this.setState({
-       selectedPill: lesson,
 
-   })
+  componentWillReceiveProps(nextProps) {
+      this.setState({modules: nextProps.topics});
+  }
+
 
   createModule = () => {
     if(this.state.update===0){
@@ -56,11 +51,12 @@ class TopicPills extends React.Component {
         ]
       }
     )
+    this.props.addTopic(newModule);
     }
     else{
-      console.log(this.state.modules);
-      console.log(this.state.module);
-      var i = 0
+      //console.log(this.state.modules);
+      //console.log(this.state.module);
+      var i = 0;
       for(i=0;i<this.state.modules.length;i++){
         if(this.state.modules[i].id===this.state.module.id){
           this.state.modules[i] = this.state.module;
@@ -124,6 +120,7 @@ class TopicPills extends React.Component {
 
 
   render() {
+    //console.log(this.props.topics);
     return(
       <div>
         <ul className="nav nav-pills">
@@ -133,8 +130,8 @@ class TopicPills extends React.Component {
                 return (
                   <PillItem
                     editModule = {this.editModule}
-                    selectPill={this.selectPill}
-                    selectedPill={this.state.selectedPill}
+                    selectPill={this.props.selectTopic}
+                    selectedPill={this.props.selectedTopic}
                     deleteModule={this.deleteModule}
                     titleChanged={this.titleChanged}
                     key={module.id}
@@ -142,17 +139,17 @@ class TopicPills extends React.Component {
                 )
               }
             )
-          }
+        }
         <li className="nav-item">
         	<div className="input-group">
             <input
               onChange={this.titleChanged}
               className="form-control"
               placeholder="New Topic"/>
-            <span class="input-group-btn">
+            <span className="input-group-btn">
             <button
               onClick={this.createModule}
-              className="btn btn-primary"><i class="fa fa-plus"></i></button>
+              className="btn btn-primary"><i className="fa fa-plus"></i></button>
             </span>
             </div>
           </li>
