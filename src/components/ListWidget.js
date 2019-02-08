@@ -36,7 +36,7 @@ const ListWidget = ({widget, updateWidget, preview}) =>
         (widget.order === "2" &&  <ol>{widget.items.split(" ").map((line) => <li>{line}</li>)}</ol>) 
     
 }
-    <hr/> 
+<hr/>
 </div>
 
 export default ListWidget;

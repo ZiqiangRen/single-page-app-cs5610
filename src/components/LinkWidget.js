@@ -29,7 +29,7 @@ const LinkWidget = ({widget, updateWidget, preview}) =>
     ||
         <a href={widget.href}>{widget.title}</a>
     }
-        <hr/> 
+    <hr/>
     </div>
 
 

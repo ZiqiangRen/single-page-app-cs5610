@@ -16,8 +16,13 @@ class WidgetList extends Component {
     constructor(props) {
     super(props);
     this.state = {
+        widgets: this.props.widgets,
       switched: false
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+      this.setState({widgets: nextProps.widgets});
   }
 
     toggleSwitch = () => {
@@ -44,7 +49,7 @@ class WidgetList extends Component {
                 <hr/>
                 <div className="list-group">
                 {
-                    this.props.widgets.map((widget, index) =>
+                    this.state.widgets.map((widget, index) =>
                         <WidgetComponent
                             key={widget.id}
                             updateWidget={this.props.updateWidget}

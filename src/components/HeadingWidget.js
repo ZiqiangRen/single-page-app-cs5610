@@ -32,7 +32,7 @@ const HeadingWidget = ({widget, updateWidget, preview}) =>
             }}
             className="form-control"/>
     </div>}
-    <hr/> 
+    <hr/>
 </div>
 
 export default HeadingWidget;

@@ -37,6 +37,11 @@ class CourseEditor extends React.Component {
 
   
   selectModule = module => {
+    let action = {
+      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
+      topicId: module.lessons[0].topics[0].id
+    }
+    this.store.dispatch(action);
     this.setState({
       selectedModule: module,
       selectedLesson: module.lessons[0],
@@ -44,38 +49,32 @@ class CourseEditor extends React.Component {
       lesson: module.lessons,
       topic: module.lessons[0].topics
     });
-    let action = {
-      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
-      topicId: this.state.selectedTopic.id
-    }
-    //console.log(action.topicId);
-    this.store.dispatch(action);
   }
 
 
 
   selectLesson = lesson => {
+   let action = {
+      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
+      topicId: lesson.topics[0].id
+    }
+    this.store.dispatch(action);
    this.setState({
        selectedLesson: lesson,
        selectedTopic: lesson.topics[0],
        topic: lesson.topics
    })
-   let action = {
-      type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
-      topicId: this.state.selectedTopic.id
-    }
-    this.store.dispatch(action);
 }
 
   selectTopic = topic => {
-   this.setState({
-       selectedTopic: topic
-   })
    let action = {
       type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
-      topicId: this.state.selectedTopic.id
+      topicId: topic.id
     }
     this.store.dispatch(action);
+       this.setState({
+       selectedTopic: topic
+   })
 }
 
    addLesson = lesson => 

@@ -12,15 +12,15 @@ const ImageWidget = ({widget, updateWidget, preview}) =>
                 updateWidget(widget)
             }}
             placeholder="input your image url here"
-            className="form-control"/>
+            className="form-control col-8"/>
         <input
             placeholder="Widget name"
-            className="form-control"/>
+            className="form-control col-8"/>
     </div>
     ||
         <img src={widget.src} alt="Your Image"/>
 }    
-    <hr/> 
+<hr/>
 </div>
 
 

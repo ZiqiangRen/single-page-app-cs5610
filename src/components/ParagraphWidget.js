@@ -22,7 +22,7 @@ const ParagraphWidget = ({widget, updateWidget, preview}) =>
     ||
     <p>{widget.text}</p>
 }    
-    <hr/> 
+<hr/>
 </div>
 
 
